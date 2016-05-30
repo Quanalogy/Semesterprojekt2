@@ -17,40 +17,28 @@ void newMessage()
 {
 	_delay_us(330);		// Forsinkelse sikre at vi læser bite.  330 virker på fumlebræt
 	
-	PORTA = (PORTA | 0b00000001);
-	
+	PORTA = 0b00000001;
+
 	insertNewBit();		// Indsæt nye bit i bitrækken
 
 	if (checkForLegitMessage() == 1)		// Check om der er kommet en ny besked
 	{
-		
-		SendChar(0b00000000);
-		SendChar(firstMessagePart);
-		SendChar(secondMessagePart);
-		SendChar(thirdMessagePart);
-		SendChar(fourthMessagePart);
-		SendChar(0b00000000);
-		SendChar(0b00000000);
-		SendChar(0b00000000);
-
 		struct X10Message message = readMessage();		// Læs beekeden
-		/*
-		SendChar('\n');
-		SendInteger(message.unit_);
-		SendChar('\n');
-		SendInteger(message.mode_);
-		SendChar('\n');
-		SendInteger(message.brightness_);
-		SendChar('\n');
-		*/
-
+		
+		SendInteger(message.unit_);			// Debug
+		SendChar(' ');						//
+		SendInteger(message.mode_);			//
+		SendChar(' ');						//
+		SendInteger(message.brightness_);	//
+		SendChar('\n');						//
+		
 		if (message.unit_ == UNIT_ID || message.unit_ == 0)		// Hvis beskeden er til denne enhed eller alle enheder
 		{
 			interpretMessage(message);		// Forstå besked og udfør kommandoer
 		}
 	}
-	_delay_ms(2);
-	PORTA = (PORTA & 0b11111110);
+	
+	PORTA = 0b00000000;
 }
 
 
@@ -73,7 +61,7 @@ void interpretMessage(struct X10Message m)
 
 void insertNewBit()		// Shifter alle bits i den indlæste bit én frem og indsætter ny bit
 {
-	char newBit = (PINA & 0b00000100);													// Aflæs databit fra båndpasfilter
+	char newBit = (PIND & 0b00000100);													// Aflæs databit fra båndpasfilter
 
 	firstMessagePart = firstMessagePart << 1;											// Shift række 1, én til højre
 	firstMessagePart = (firstMessagePart | ((secondMessagePart & 0b10000000) >> 7));	// og indsæt bit 7 fra 2. række på plads 0 i række 1.
@@ -154,8 +142,6 @@ int getUnitID()		// Henter enhedesnummer
 	unitID = (unitID | (getBitValue(secondMessagePart, 3) << 2));
 	unitID = (unitID | (getBitValue(secondMessagePart, 2) << 1));
 	unitID = (unitID | (getBitValue(secondMessagePart, 1) << 0));
-
-	//SendInteger(unitID);
 
 	return unitID;
 }

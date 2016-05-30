@@ -31,7 +31,7 @@ int pirScan()
 
 void pirInterruptStart()
 {
-	EIMSK = (EIMSK | 0b00100000);	// Lokal interrupt enable for INT1
+	EIMSK = (EIMSK | 0b00100000);	// Lokal interrupt enable for INT5
 }
 
 

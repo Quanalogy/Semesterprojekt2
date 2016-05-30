@@ -28,8 +28,7 @@ void deactivateZeroCrossInterrupt()
 
 ISR(INT4_vect)
 {
-	
 	newMessage();					// Nyt zero cross
 
-	EIFR = (EIFR | 0b00010000);
+	EIFR = (EIFR | 0b00010000);		// Reset interrupt flag
 }
