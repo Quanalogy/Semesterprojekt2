@@ -15,6 +15,7 @@
 #include "PirSensor.h"
 
 #include "DataReceiver.h"
+#include "X10Message.h"
 
 int main(void)
 {
@@ -24,6 +25,13 @@ int main(void)
 	zeroCrossInit();				// Initere zero Crossing og alle underliggende systemer.
 	pirInterruptStart();			// Starter i PIR respons stadige
 	activateZeroCrossInterrupt();	// 
+
+	//struct X10Message m;
+	//m.unit_ = 1;
+	//m.mode_ = 1;
+	//m.brightness_ = 80;
+
+	//interpretMessage(m);
 
 	while(1)
 	{

@@ -20,15 +20,18 @@ void activationTimerInit()
 
 void activationTimerStart()
 {
-	activationTimerReset();
+	activationTimerReset();				//
 	TCCR3B = (TCCR3B | 0b00000101);		// Preescaler sættes til 1024
 	TCCR3B = (TCCR3B & 0b11111101);		//
+	lightOn();							//
 }
 
 
 void activationTimerStop()
 {
 	TCCR3B = (TCCR3B & 0b11111000);		// Preescaler sættes til 0
+	lightOff();
+	waitedTime = 0;
 }
 
 
@@ -49,14 +52,8 @@ ISR(TIMER3_OVF_vect)					// Interrupt hvert sekund
 	waitedTime++;						
 
 	if (waitedTime >= PIR_WAIT_TIME)	
-	{
-		setLightLevel(0);				
-		waitedTime = 0;
+	{	
 		activationTimerStop();
-	}
-	else
-	{
-		setLightLevel(100);
 	}
 
 	activationClokcReset();

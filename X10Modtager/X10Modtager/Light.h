@@ -3,8 +3,11 @@
 
 #include "GlobalInclude.h"
 
+int lightLevel;
+
 void lightInit();
 void setLightLevel(int);	// int 0 - 100
+void setPwmTimer(int);
 void lightOn();
 void lightOff();
 void lightInvert();

@@ -17,8 +17,6 @@ void newMessage()
 {
 	_delay_us(330);		// Forsinkelse sikre at vi læser bite.  330 virker på fumlebræt
 	
-	PORTA = 0b00000001;
-
 	insertNewBit();		// Indsæt nye bit i bitrækken
 
 	if (checkForLegitMessage() == 1)		// Check om der er kommet en ny besked
@@ -37,8 +35,6 @@ void newMessage()
 			interpretMessage(message);		// Forstå besked og udfør kommandoer
 		}
 	}
-	
-	PORTA = 0b00000000;
 }
 
 

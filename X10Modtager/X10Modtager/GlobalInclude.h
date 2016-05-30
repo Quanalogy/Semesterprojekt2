@@ -24,4 +24,6 @@
 #define MAX_SIM_TIME 5		// Maximum tid simuleringen kan have tændt / slukket lys
 
 
+extern int lightLevel;
+
 #endif /* GLOBALINCLUDE_H_ */
