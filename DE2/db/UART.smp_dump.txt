@@ -1,0 +1,35 @@
+
+State Machine - |RecTest|Code_Lock:codelock|code_lock_present_state
+Name code_lock_present_state.Err_3 code_lock_present_state.Err_2 code_lock_present_state.Err_1 code_lock_present_state.Err_0 
+code_lock_present_state.Err_0 0 0 0 0 
+code_lock_present_state.Err_1 0 0 1 1 
+code_lock_present_state.Err_2 0 1 0 1 
+code_lock_present_state.Err_3 1 0 0 1 
+
+State Machine - |RecTest|Code_Lock:codelock|present_state
+Name present_state.permlock present_state.wcode present_state.going_idle present_state.unlocked present_state.eval present_state.idle 
+present_state.idle 0 0 0 0 0 0 
+present_state.eval 0 0 0 0 1 1 
+present_state.unlocked 0 0 0 1 0 1 
+present_state.going_idle 0 0 1 0 0 1 
+present_state.wcode 0 1 0 0 0 1 
+present_state.permlock 1 0 0 0 0 1 
+
+State Machine - |RecTest|Receiver:rec|cnt_present_state
+Name cnt_present_state.cnt7 cnt_present_state.cnt6 cnt_present_state.cnt5 cnt_present_state.cnt4 cnt_present_state.cnt3 cnt_present_state.cnt2 cnt_present_state.cnt1 cnt_present_state.cnt0 cnt_present_state.idle 
+cnt_present_state.idle 0 0 0 0 0 0 0 0 0 
+cnt_present_state.cnt0 0 0 0 0 0 0 0 1 1 
+cnt_present_state.cnt1 0 0 0 0 0 0 1 0 1 
+cnt_present_state.cnt2 0 0 0 0 0 1 0 0 1 
+cnt_present_state.cnt3 0 0 0 0 1 0 0 0 1 
+cnt_present_state.cnt4 0 0 0 1 0 0 0 0 1 
+cnt_present_state.cnt5 0 0 1 0 0 0 0 0 1 
+cnt_present_state.cnt6 0 1 0 0 0 0 0 0 1 
+cnt_present_state.cnt7 1 0 0 0 0 0 0 0 1 
+
+State Machine - |RecTest|Receiver:rec|present_state
+Name present_state.latchData present_state.stopping present_state.reading present_state.idle 
+present_state.idle 0 0 0 0 
+present_state.reading 0 0 1 1 
+present_state.stopping 0 1 0 1 
+present_state.latchData 1 0 0 1 

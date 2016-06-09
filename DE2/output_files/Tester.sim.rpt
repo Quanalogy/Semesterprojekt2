@@ -1,0 +1,588 @@
+Simulator report for Tester
+Fri May 27 17:00:43 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 100.0 us     ;
+; Simulation Netlist Size     ; 309 nodes    ;
+; Simulation Coverage         ;      58.69 % ;
+; Total Number of Transitions ; 92172        ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                                  ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                                ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                             ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                   ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                                    ;               ;
+; Vector input source                                                                        ; C:/Users/Soren/Documents/GitHub/Semesterprojekt2/DE2/adminValidate.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                     ; On            ;
+; Check outputs                                                                              ; Off                                                                    ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                     ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                     ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                     ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                     ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                    ; Off           ;
+; Detect glitches                                                                            ; Off                                                                    ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                    ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                    ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                    ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                    ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                     ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                             ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                    ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                    ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                   ; Auto          ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      58.69 % ;
+; Total nodes checked                                 ; 309          ;
+; Total output ports checked                          ; 305          ;
+; Total output ports with complete 1/0-value coverage ; 179          ;
+; Total output ports with no 1/0-value coverage       ; 113          ;
+; Total output ports with no 1-value coverage         ; 121          ;
+; Total output ports with no 0-value coverage         ; 118          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                  ;
++-------------------------------------------------------------+-------------------------------------------------------------+------------------+
+; Node Name                                                   ; Output Port Name                                            ; Output Port Type ;
++-------------------------------------------------------------+-------------------------------------------------------------+------------------+
+; |RecTest|CLOCK_50                                           ; |RecTest|CLOCK_50                                           ; out              ;
+; |RecTest|LEDR[0]                                            ; |RecTest|LEDR[0]                                            ; pin_out          ;
+; |RecTest|LEDR[1]                                            ; |RecTest|LEDR[1]                                            ; pin_out          ;
+; |RecTest|LEDR[2]                                            ; |RecTest|LEDR[2]                                            ; pin_out          ;
+; |RecTest|GPIO_0[0]                                          ; |RecTest|GPIO_0[0]                                          ; out              ;
+; |RecTest|GPIO_1[0]                                          ; |RecTest|GPIO_1[0]                                          ; pin_out          ;
+; |RecTest|Code_Lock:codelock|present_state.idle              ; |RecTest|Code_Lock:codelock|present_state.idle              ; regout           ;
+; |RecTest|Code_Lock:codelock|present_state.eval              ; |RecTest|Code_Lock:codelock|present_state.eval              ; regout           ;
+; |RecTest|Code_Lock:codelock|present_state.unlocked          ; |RecTest|Code_Lock:codelock|present_state.unlocked          ; regout           ;
+; |RecTest|Code_Lock:codelock|present_state.going_idle        ; |RecTest|Code_Lock:codelock|present_state.going_idle        ; regout           ;
+; |RecTest|Code_Lock:codelock|present_state.wcode             ; |RecTest|Code_Lock:codelock|present_state.wcode             ; regout           ;
+; |RecTest|Code_Lock:codelock|present_state.permlock          ; |RecTest|Code_Lock:codelock|present_state.permlock          ; regout           ;
+; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_0   ; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_0   ; regout           ;
+; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_1   ; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_1   ; regout           ;
+; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_2   ; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_2   ; regout           ;
+; |RecTest|Code_Lock:codelock|next_state~0                    ; |RecTest|Code_Lock:codelock|next_state~0                    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~1                    ; |RecTest|Code_Lock:codelock|next_state~1                    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~2                    ; |RecTest|Code_Lock:codelock|next_state~2                    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~3                    ; |RecTest|Code_Lock:codelock|next_state~3                    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~5                    ; |RecTest|Code_Lock:codelock|next_state~5                    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~18                   ; |RecTest|Code_Lock:codelock|next_state~18                   ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~19                   ; |RecTest|Code_Lock:codelock|next_state~19                   ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~21                   ; |RecTest|Code_Lock:codelock|next_state~21                   ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~22                   ; |RecTest|Code_Lock:codelock|next_state~22                   ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~23                   ; |RecTest|Code_Lock:codelock|next_state~23                   ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~24                   ; |RecTest|Code_Lock:codelock|next_state~24                   ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~25                   ; |RecTest|Code_Lock:codelock|next_state~25                   ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~26                   ; |RecTest|Code_Lock:codelock|next_state~26                   ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~27                   ; |RecTest|Code_Lock:codelock|next_state~27                   ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~29                   ; |RecTest|Code_Lock:codelock|next_state~29                   ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~30                   ; |RecTest|Code_Lock:codelock|next_state~30                   ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~31                   ; |RecTest|Code_Lock:codelock|next_state~31                   ; out              ;
+; |RecTest|Code_Lock:codelock|code_lock_next_state~0          ; |RecTest|Code_Lock:codelock|code_lock_next_state~0          ; out              ;
+; |RecTest|Code_Lock:codelock|code_lock_next_state~1          ; |RecTest|Code_Lock:codelock|code_lock_next_state~1          ; out              ;
+; |RecTest|Code_Lock:codelock|code_lock_next_state~2          ; |RecTest|Code_Lock:codelock|code_lock_next_state~2          ; out              ;
+; |RecTest|Code_Lock:codelock|code_lock_next_state~3          ; |RecTest|Code_Lock:codelock|code_lock_next_state~3          ; out              ;
+; |RecTest|Code_Lock:codelock|code_lock_next_state.Err_0      ; |RecTest|Code_Lock:codelock|code_lock_next_state.Err_0      ; out              ;
+; |RecTest|Code_Lock:codelock|code_lock_next_state.Err_1      ; |RecTest|Code_Lock:codelock|code_lock_next_state.Err_1      ; out              ;
+; |RecTest|Code_Lock:codelock|code_lock_next_state.Err_2      ; |RecTest|Code_Lock:codelock|code_lock_next_state.Err_2      ; out              ;
+; |RecTest|Code_Lock:codelock|code_lock_next_state.Err_3      ; |RecTest|Code_Lock:codelock|code_lock_next_state.Err_3      ; out              ;
+; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_3   ; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_3   ; regout           ;
+; |RecTest|Code_Lock:codelock|err~0                           ; |RecTest|Code_Lock:codelock|err~0                           ; out0             ;
+; |RecTest|Code_Lock:codelock|err~1                           ; |RecTest|Code_Lock:codelock|err~1                           ; out0             ;
+; |RecTest|Code_Lock:codelock|code_lock_present_state~0       ; |RecTest|Code_Lock:codelock|code_lock_present_state~0       ; out0             ;
+; |RecTest|Code_Lock:codelock|present_state~0                 ; |RecTest|Code_Lock:codelock|present_state~0                 ; out0             ;
+; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_0~0 ; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_0~0 ; out0             ;
+; |RecTest|Code_Lock:codelock|code_lock_next_state~5          ; |RecTest|Code_Lock:codelock|code_lock_next_state~5          ; out0             ;
+; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_1~0 ; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_1~0 ; out0             ;
+; |RecTest|Code_Lock:codelock|code_lock_next_state~7          ; |RecTest|Code_Lock:codelock|code_lock_next_state~7          ; out0             ;
+; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_2~0 ; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_2~0 ; out0             ;
+; |RecTest|Code_Lock:codelock|code_lock_next_state~9          ; |RecTest|Code_Lock:codelock|code_lock_next_state~9          ; out0             ;
+; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_3~0 ; |RecTest|Code_Lock:codelock|code_lock_present_state.Err_3~0 ; out0             ;
+; |RecTest|Code_Lock:codelock|code_lock_next_state~11         ; |RecTest|Code_Lock:codelock|code_lock_next_state~11         ; out0             ;
+; |RecTest|Code_Lock:codelock|code_lock_present_state~5       ; |RecTest|Code_Lock:codelock|code_lock_present_state~5       ; out0             ;
+; |RecTest|Code_Lock:codelock|next_state~33                   ; |RecTest|Code_Lock:codelock|next_state~33                   ; out0             ;
+; |RecTest|Code_Lock:codelock|next_state~35                   ; |RecTest|Code_Lock:codelock|next_state~35                   ; out0             ;
+; |RecTest|Code_Lock:codelock|next_state~37                   ; |RecTest|Code_Lock:codelock|next_state~37                   ; out0             ;
+; |RecTest|Code_Lock:codelock|next_state~39                   ; |RecTest|Code_Lock:codelock|next_state~39                   ; out0             ;
+; |RecTest|Code_Lock:codelock|next_state~41                   ; |RecTest|Code_Lock:codelock|next_state~41                   ; out0             ;
+; |RecTest|Code_Lock:codelock|next_state~43                   ; |RecTest|Code_Lock:codelock|next_state~43                   ; out0             ;
+; |RecTest|Code_Lock:codelock|present_state~5                 ; |RecTest|Code_Lock:codelock|present_state~5                 ; out0             ;
+; |RecTest|Receiver:rec|present_state.idle                    ; |RecTest|Receiver:rec|present_state.idle                    ; regout           ;
+; |RecTest|Receiver:rec|present_state.reading                 ; |RecTest|Receiver:rec|present_state.reading                 ; regout           ;
+; |RecTest|Receiver:rec|present_state.stopping                ; |RecTest|Receiver:rec|present_state.stopping                ; regout           ;
+; |RecTest|Receiver:rec|present_state.latchData               ; |RecTest|Receiver:rec|present_state.latchData               ; regout           ;
+; |RecTest|Receiver:rec|cnt_present_state.idle                ; |RecTest|Receiver:rec|cnt_present_state.idle                ; regout           ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt0                ; |RecTest|Receiver:rec|cnt_present_state.cnt0                ; regout           ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt1                ; |RecTest|Receiver:rec|cnt_present_state.cnt1                ; regout           ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt2                ; |RecTest|Receiver:rec|cnt_present_state.cnt2                ; regout           ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt3                ; |RecTest|Receiver:rec|cnt_present_state.cnt3                ; regout           ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt4                ; |RecTest|Receiver:rec|cnt_present_state.cnt4                ; regout           ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt5                ; |RecTest|Receiver:rec|cnt_present_state.cnt5                ; regout           ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt6                ; |RecTest|Receiver:rec|cnt_present_state.cnt6                ; regout           ;
+; |RecTest|Receiver:rec|next_state~0                          ; |RecTest|Receiver:rec|next_state~0                          ; out              ;
+; |RecTest|Receiver:rec|next_state~1                          ; |RecTest|Receiver:rec|next_state~1                          ; out              ;
+; |RecTest|Receiver:rec|next_state~2                          ; |RecTest|Receiver:rec|next_state~2                          ; out              ;
+; |RecTest|Receiver:rec|next_state~3                          ; |RecTest|Receiver:rec|next_state~3                          ; out              ;
+; |RecTest|Receiver:rec|next_state~4                          ; |RecTest|Receiver:rec|next_state~4                          ; out              ;
+; |RecTest|Receiver:rec|next_state~5                          ; |RecTest|Receiver:rec|next_state~5                          ; out              ;
+; |RecTest|Receiver:rec|next_state~6                          ; |RecTest|Receiver:rec|next_state~6                          ; out              ;
+; |RecTest|Receiver:rec|next_state~7                          ; |RecTest|Receiver:rec|next_state~7                          ; out              ;
+; |RecTest|Receiver:rec|rxdata[0]                             ; |RecTest|Receiver:rec|rxdata[0]                             ; regout           ;
+; |RecTest|Receiver:rec|rxdata[1]                             ; |RecTest|Receiver:rec|rxdata[1]                             ; regout           ;
+; |RecTest|Receiver:rec|cnt_next_state.idle                   ; |RecTest|Receiver:rec|cnt_next_state.idle                   ; out              ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt0                   ; |RecTest|Receiver:rec|cnt_next_state.cnt0                   ; out              ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt1                   ; |RecTest|Receiver:rec|cnt_next_state.cnt1                   ; out              ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt2                   ; |RecTest|Receiver:rec|cnt_next_state.cnt2                   ; out              ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt3                   ; |RecTest|Receiver:rec|cnt_next_state.cnt3                   ; out              ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt4                   ; |RecTest|Receiver:rec|cnt_next_state.cnt4                   ; out              ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt5                   ; |RecTest|Receiver:rec|cnt_next_state.cnt5                   ; out              ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt6                   ; |RecTest|Receiver:rec|cnt_next_state.cnt6                   ; out              ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt7                   ; |RecTest|Receiver:rec|cnt_next_state.cnt7                   ; out              ;
+; |RecTest|Receiver:rec|rxdata[3]                             ; |RecTest|Receiver:rec|rxdata[3]                             ; regout           ;
+; |RecTest|Receiver:rec|rxdata[4]                             ; |RecTest|Receiver:rec|rxdata[4]                             ; regout           ;
+; |RecTest|Receiver:rec|rxdata[5]                             ; |RecTest|Receiver:rec|rxdata[5]                             ; regout           ;
+; |RecTest|Receiver:rec|rxdata[7]                             ; |RecTest|Receiver:rec|rxdata[7]                             ; regout           ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt7                ; |RecTest|Receiver:rec|cnt_present_state.cnt7                ; regout           ;
+; |RecTest|Receiver:rec|cnt_present_state~0                   ; |RecTest|Receiver:rec|cnt_present_state~0                   ; out0             ;
+; |RecTest|Receiver:rec|present_state~0                       ; |RecTest|Receiver:rec|present_state~0                       ; out0             ;
+; |RecTest|Receiver:rec|cnt_present_state.idle~0              ; |RecTest|Receiver:rec|cnt_present_state.idle~0              ; out0             ;
+; |RecTest|Receiver:rec|cnt_next_state.idle~0                 ; |RecTest|Receiver:rec|cnt_next_state.idle~0                 ; out0             ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt0~0              ; |RecTest|Receiver:rec|cnt_present_state.cnt0~0              ; out0             ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt0~0                 ; |RecTest|Receiver:rec|cnt_next_state.cnt0~0                 ; out0             ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt1~0              ; |RecTest|Receiver:rec|cnt_present_state.cnt1~0              ; out0             ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt1~0                 ; |RecTest|Receiver:rec|cnt_next_state.cnt1~0                 ; out0             ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt2~0              ; |RecTest|Receiver:rec|cnt_present_state.cnt2~0              ; out0             ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt2~0                 ; |RecTest|Receiver:rec|cnt_next_state.cnt2~0                 ; out0             ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt3~0              ; |RecTest|Receiver:rec|cnt_present_state.cnt3~0              ; out0             ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt3~0                 ; |RecTest|Receiver:rec|cnt_next_state.cnt3~0                 ; out0             ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt4~0              ; |RecTest|Receiver:rec|cnt_present_state.cnt4~0              ; out0             ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt4~0                 ; |RecTest|Receiver:rec|cnt_next_state.cnt4~0                 ; out0             ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt5~0              ; |RecTest|Receiver:rec|cnt_present_state.cnt5~0              ; out0             ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt5~0                 ; |RecTest|Receiver:rec|cnt_next_state.cnt5~0                 ; out0             ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt6~0              ; |RecTest|Receiver:rec|cnt_present_state.cnt6~0              ; out0             ;
+; |RecTest|Receiver:rec|cnt_next_state.cnt6~0                 ; |RecTest|Receiver:rec|cnt_next_state.cnt6~0                 ; out0             ;
+; |RecTest|Receiver:rec|cnt_present_state.cnt7~0              ; |RecTest|Receiver:rec|cnt_present_state.cnt7~0              ; out0             ;
+; |RecTest|Receiver:rec|next_state~10                         ; |RecTest|Receiver:rec|next_state~10                         ; out0             ;
+; |RecTest|Receiver:rec|cnt_present_state~5                   ; |RecTest|Receiver:rec|cnt_present_state~5                   ; out0             ;
+; |RecTest|Receiver:rec|next_state~12                         ; |RecTest|Receiver:rec|next_state~12                         ; out0             ;
+; |RecTest|Receiver:rec|next_state~14                         ; |RecTest|Receiver:rec|next_state~14                         ; out0             ;
+; |RecTest|Receiver:rec|next_state~16                         ; |RecTest|Receiver:rec|next_state~16                         ; out0             ;
+; |RecTest|Receiver:rec|rxvalid                               ; |RecTest|Receiver:rec|rxvalid                               ; out0             ;
+; |RecTest|Receiver:rec|present_state~5                       ; |RecTest|Receiver:rec|present_state~5                       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|clk_count[10]~0              ; |RecTest|BaudRateGenerator:gen|clk_count[10]~0              ; out0             ;
+; |RecTest|BaudRateGenerator:gen|WideNor0                     ; |RecTest|BaudRateGenerator:gen|WideNor0                     ; out0             ;
+; |RecTest|BaudRateGenerator:gen|clk_count[5]                 ; |RecTest|BaudRateGenerator:gen|clk_count[5]                 ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[4]                 ; |RecTest|BaudRateGenerator:gen|clk_count[4]                 ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[3]                 ; |RecTest|BaudRateGenerator:gen|clk_count[3]                 ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[2]                 ; |RecTest|BaudRateGenerator:gen|clk_count[2]                 ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[1]                 ; |RecTest|BaudRateGenerator:gen|clk_count[1]                 ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_baud                     ; |RecTest|BaudRateGenerator:gen|clk_baud                     ; out              ;
+; |RecTest|Code_Lock:codelock|Selector0~0                     ; |RecTest|Code_Lock:codelock|Selector0~0                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector0~2                     ; |RecTest|Code_Lock:codelock|Selector0~2                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector0~5                     ; |RecTest|Code_Lock:codelock|Selector0~5                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector1~0                     ; |RecTest|Code_Lock:codelock|Selector1~0                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector1~5                     ; |RecTest|Code_Lock:codelock|Selector1~5                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector2~0                     ; |RecTest|Code_Lock:codelock|Selector2~0                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector2~1                     ; |RecTest|Code_Lock:codelock|Selector2~1                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector3~0                     ; |RecTest|Code_Lock:codelock|Selector3~0                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector3~2                     ; |RecTest|Code_Lock:codelock|Selector3~2                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector3~3                     ; |RecTest|Code_Lock:codelock|Selector3~3                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector3~4                     ; |RecTest|Code_Lock:codelock|Selector3~4                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector3~6                     ; |RecTest|Code_Lock:codelock|Selector3~6                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector4~0                     ; |RecTest|Code_Lock:codelock|Selector4~0                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector4~2                     ; |RecTest|Code_Lock:codelock|Selector4~2                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector4~4                     ; |RecTest|Code_Lock:codelock|Selector4~4                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector5~0                     ; |RecTest|Code_Lock:codelock|Selector5~0                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector5~1                     ; |RecTest|Code_Lock:codelock|Selector5~1                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector5~2                     ; |RecTest|Code_Lock:codelock|Selector5~2                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector6~0                     ; |RecTest|Code_Lock:codelock|Selector6~0                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector6~1                     ; |RecTest|Code_Lock:codelock|Selector6~1                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector7~0                     ; |RecTest|Code_Lock:codelock|Selector7~0                     ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector7~1                     ; |RecTest|Code_Lock:codelock|Selector7~1                     ; out0             ;
+; |RecTest|Receiver:rec|Selector0~0                           ; |RecTest|Receiver:rec|Selector0~0                           ; out0             ;
+; |RecTest|Receiver:rec|Selector0~1                           ; |RecTest|Receiver:rec|Selector0~1                           ; out0             ;
+; |RecTest|Receiver:rec|Selector0~2                           ; |RecTest|Receiver:rec|Selector0~2                           ; out0             ;
+; |RecTest|Receiver:rec|Selector0~3                           ; |RecTest|Receiver:rec|Selector0~3                           ; out0             ;
+; |RecTest|Receiver:rec|Selector1~0                           ; |RecTest|Receiver:rec|Selector1~0                           ; out0             ;
+; |RecTest|Receiver:rec|Selector1~1                           ; |RecTest|Receiver:rec|Selector1~1                           ; out0             ;
+; |RecTest|Receiver:rec|Selector1~2                           ; |RecTest|Receiver:rec|Selector1~2                           ; out0             ;
+; |RecTest|Receiver:rec|Selector2~0                           ; |RecTest|Receiver:rec|Selector2~0                           ; out0             ;
+; |RecTest|Receiver:rec|Selector2~1                           ; |RecTest|Receiver:rec|Selector2~1                           ; out0             ;
+; |RecTest|Receiver:rec|Selector3~0                           ; |RecTest|Receiver:rec|Selector3~0                           ; out0             ;
+; |RecTest|Receiver:rec|Selector3~1                           ; |RecTest|Receiver:rec|Selector3~1                           ; out0             ;
+; |RecTest|Receiver:rec|Selector3~3                           ; |RecTest|Receiver:rec|Selector3~3                           ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~0                       ; |RecTest|BaudRateGenerator:gen|Add0~0                       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~1                       ; |RecTest|BaudRateGenerator:gen|Add0~1                       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~2                       ; |RecTest|BaudRateGenerator:gen|Add0~2                       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~3                       ; |RecTest|BaudRateGenerator:gen|Add0~3                       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~4                       ; |RecTest|BaudRateGenerator:gen|Add0~4                       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~5                       ; |RecTest|BaudRateGenerator:gen|Add0~5                       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~6                       ; |RecTest|BaudRateGenerator:gen|Add0~6                       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~7                       ; |RecTest|BaudRateGenerator:gen|Add0~7                       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~8                       ; |RecTest|BaudRateGenerator:gen|Add0~8                       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~9                       ; |RecTest|BaudRateGenerator:gen|Add0~9                       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~10                      ; |RecTest|BaudRateGenerator:gen|Add0~10                      ; out0             ;
+; |RecTest|Code_Lock:codelock|Equal2~0                        ; |RecTest|Code_Lock:codelock|Equal2~0                        ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Equal0~0                     ; |RecTest|BaudRateGenerator:gen|Equal0~0                     ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Equal1~0                     ; |RecTest|BaudRateGenerator:gen|Equal1~0                     ; out0             ;
++-------------------------------------------------------------+-------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                         ;
++-------------------------------------------------------+-------------------------------------------------------+------------------+
+; Node Name                                             ; Output Port Name                                      ; Output Port Type ;
++-------------------------------------------------------+-------------------------------------------------------+------------------+
+; |RecTest|Code_Lock:codelock|next_state~4              ; |RecTest|Code_Lock:codelock|next_state~4              ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~6              ; |RecTest|Code_Lock:codelock|next_state~6              ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~7              ; |RecTest|Code_Lock:codelock|next_state~7              ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~8              ; |RecTest|Code_Lock:codelock|next_state~8              ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~9              ; |RecTest|Code_Lock:codelock|next_state~9              ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~10             ; |RecTest|Code_Lock:codelock|next_state~10             ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~11             ; |RecTest|Code_Lock:codelock|next_state~11             ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~12             ; |RecTest|Code_Lock:codelock|next_state~12             ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~13             ; |RecTest|Code_Lock:codelock|next_state~13             ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~14             ; |RecTest|Code_Lock:codelock|next_state~14             ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~15             ; |RecTest|Code_Lock:codelock|next_state~15             ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~16             ; |RecTest|Code_Lock:codelock|next_state~16             ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~17             ; |RecTest|Code_Lock:codelock|next_state~17             ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~20             ; |RecTest|Code_Lock:codelock|next_state~20             ; out              ;
+; |RecTest|Code_Lock:codelock|code_lock_present_state~1 ; |RecTest|Code_Lock:codelock|code_lock_present_state~1 ; out0             ;
+; |RecTest|Code_Lock:codelock|present_state~1           ; |RecTest|Code_Lock:codelock|present_state~1           ; out0             ;
+; |RecTest|Code_Lock:codelock|code_lock_present_state~9 ; |RecTest|Code_Lock:codelock|code_lock_present_state~9 ; out0             ;
+; |RecTest|Code_Lock:codelock|present_state~9           ; |RecTest|Code_Lock:codelock|present_state~9           ; out0             ;
+; |RecTest|Receiver:rec|cnt_present_state~1             ; |RecTest|Receiver:rec|cnt_present_state~1             ; out0             ;
+; |RecTest|Receiver:rec|present_state~1                 ; |RecTest|Receiver:rec|present_state~1                 ; out0             ;
+; |RecTest|Receiver:rec|cnt_present_state~9             ; |RecTest|Receiver:rec|cnt_present_state~9             ; out0             ;
+; |RecTest|Receiver:rec|present_state~9                 ; |RecTest|Receiver:rec|present_state~9                 ; out0             ;
+; |RecTest|BaudRateGenerator:gen|clk_count[10]          ; |RecTest|BaudRateGenerator:gen|clk_count[10]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[9]           ; |RecTest|BaudRateGenerator:gen|clk_count[9]           ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[8]           ; |RecTest|BaudRateGenerator:gen|clk_count[8]           ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[7]           ; |RecTest|BaudRateGenerator:gen|clk_count[7]           ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[6]           ; |RecTest|BaudRateGenerator:gen|clk_count[6]           ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[11]          ; |RecTest|BaudRateGenerator:gen|clk_count[11]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[12]          ; |RecTest|BaudRateGenerator:gen|clk_count[12]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[13]          ; |RecTest|BaudRateGenerator:gen|clk_count[13]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[14]          ; |RecTest|BaudRateGenerator:gen|clk_count[14]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[15]          ; |RecTest|BaudRateGenerator:gen|clk_count[15]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[16]          ; |RecTest|BaudRateGenerator:gen|clk_count[16]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[17]          ; |RecTest|BaudRateGenerator:gen|clk_count[17]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[18]          ; |RecTest|BaudRateGenerator:gen|clk_count[18]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[19]          ; |RecTest|BaudRateGenerator:gen|clk_count[19]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[20]          ; |RecTest|BaudRateGenerator:gen|clk_count[20]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[21]          ; |RecTest|BaudRateGenerator:gen|clk_count[21]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[22]          ; |RecTest|BaudRateGenerator:gen|clk_count[22]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[23]          ; |RecTest|BaudRateGenerator:gen|clk_count[23]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[24]          ; |RecTest|BaudRateGenerator:gen|clk_count[24]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[25]          ; |RecTest|BaudRateGenerator:gen|clk_count[25]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[26]          ; |RecTest|BaudRateGenerator:gen|clk_count[26]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[27]          ; |RecTest|BaudRateGenerator:gen|clk_count[27]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[28]          ; |RecTest|BaudRateGenerator:gen|clk_count[28]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[29]          ; |RecTest|BaudRateGenerator:gen|clk_count[29]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[30]          ; |RecTest|BaudRateGenerator:gen|clk_count[30]          ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[31]          ; |RecTest|BaudRateGenerator:gen|clk_count[31]          ; regout           ;
+; |RecTest|Code_Lock:codelock|Selector0~1               ; |RecTest|Code_Lock:codelock|Selector0~1               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector0~3               ; |RecTest|Code_Lock:codelock|Selector0~3               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector0~4               ; |RecTest|Code_Lock:codelock|Selector0~4               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector1~1               ; |RecTest|Code_Lock:codelock|Selector1~1               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector1~2               ; |RecTest|Code_Lock:codelock|Selector1~2               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector1~3               ; |RecTest|Code_Lock:codelock|Selector1~3               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector1~4               ; |RecTest|Code_Lock:codelock|Selector1~4               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector2~2               ; |RecTest|Code_Lock:codelock|Selector2~2               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector2~3               ; |RecTest|Code_Lock:codelock|Selector2~3               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector2~4               ; |RecTest|Code_Lock:codelock|Selector2~4               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector2~5               ; |RecTest|Code_Lock:codelock|Selector2~5               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector3~1               ; |RecTest|Code_Lock:codelock|Selector3~1               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector3~5               ; |RecTest|Code_Lock:codelock|Selector3~5               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector4~1               ; |RecTest|Code_Lock:codelock|Selector4~1               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector4~3               ; |RecTest|Code_Lock:codelock|Selector4~3               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector4~5               ; |RecTest|Code_Lock:codelock|Selector4~5               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector5~3               ; |RecTest|Code_Lock:codelock|Selector5~3               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector5~4               ; |RecTest|Code_Lock:codelock|Selector5~4               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector5~5               ; |RecTest|Code_Lock:codelock|Selector5~5               ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector5~6               ; |RecTest|Code_Lock:codelock|Selector5~6               ; out0             ;
+; |RecTest|Receiver:rec|Selector2~2                     ; |RecTest|Receiver:rec|Selector2~2                     ; out0             ;
+; |RecTest|Receiver:rec|Selector3~2                     ; |RecTest|Receiver:rec|Selector3~2                     ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~11                ; |RecTest|BaudRateGenerator:gen|Add0~11                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~12                ; |RecTest|BaudRateGenerator:gen|Add0~12                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~13                ; |RecTest|BaudRateGenerator:gen|Add0~13                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~14                ; |RecTest|BaudRateGenerator:gen|Add0~14                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~15                ; |RecTest|BaudRateGenerator:gen|Add0~15                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~16                ; |RecTest|BaudRateGenerator:gen|Add0~16                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~17                ; |RecTest|BaudRateGenerator:gen|Add0~17                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~18                ; |RecTest|BaudRateGenerator:gen|Add0~18                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~19                ; |RecTest|BaudRateGenerator:gen|Add0~19                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~20                ; |RecTest|BaudRateGenerator:gen|Add0~20                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~21                ; |RecTest|BaudRateGenerator:gen|Add0~21                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~22                ; |RecTest|BaudRateGenerator:gen|Add0~22                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~23                ; |RecTest|BaudRateGenerator:gen|Add0~23                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~24                ; |RecTest|BaudRateGenerator:gen|Add0~24                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~25                ; |RecTest|BaudRateGenerator:gen|Add0~25                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~26                ; |RecTest|BaudRateGenerator:gen|Add0~26                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~27                ; |RecTest|BaudRateGenerator:gen|Add0~27                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~28                ; |RecTest|BaudRateGenerator:gen|Add0~28                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~29                ; |RecTest|BaudRateGenerator:gen|Add0~29                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~30                ; |RecTest|BaudRateGenerator:gen|Add0~30                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~31                ; |RecTest|BaudRateGenerator:gen|Add0~31                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~32                ; |RecTest|BaudRateGenerator:gen|Add0~32                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~33                ; |RecTest|BaudRateGenerator:gen|Add0~33                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~34                ; |RecTest|BaudRateGenerator:gen|Add0~34                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~35                ; |RecTest|BaudRateGenerator:gen|Add0~35                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~36                ; |RecTest|BaudRateGenerator:gen|Add0~36                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~37                ; |RecTest|BaudRateGenerator:gen|Add0~37                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~38                ; |RecTest|BaudRateGenerator:gen|Add0~38                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~39                ; |RecTest|BaudRateGenerator:gen|Add0~39                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~40                ; |RecTest|BaudRateGenerator:gen|Add0~40                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~41                ; |RecTest|BaudRateGenerator:gen|Add0~41                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~42                ; |RecTest|BaudRateGenerator:gen|Add0~42                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~43                ; |RecTest|BaudRateGenerator:gen|Add0~43                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~44                ; |RecTest|BaudRateGenerator:gen|Add0~44                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~45                ; |RecTest|BaudRateGenerator:gen|Add0~45                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~46                ; |RecTest|BaudRateGenerator:gen|Add0~46                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~47                ; |RecTest|BaudRateGenerator:gen|Add0~47                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~48                ; |RecTest|BaudRateGenerator:gen|Add0~48                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~49                ; |RecTest|BaudRateGenerator:gen|Add0~49                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~50                ; |RecTest|BaudRateGenerator:gen|Add0~50                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~51                ; |RecTest|BaudRateGenerator:gen|Add0~51                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~52                ; |RecTest|BaudRateGenerator:gen|Add0~52                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~53                ; |RecTest|BaudRateGenerator:gen|Add0~53                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~54                ; |RecTest|BaudRateGenerator:gen|Add0~54                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~55                ; |RecTest|BaudRateGenerator:gen|Add0~55                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~56                ; |RecTest|BaudRateGenerator:gen|Add0~56                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~57                ; |RecTest|BaudRateGenerator:gen|Add0~57                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~58                ; |RecTest|BaudRateGenerator:gen|Add0~58                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~59                ; |RecTest|BaudRateGenerator:gen|Add0~59                ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~60                ; |RecTest|BaudRateGenerator:gen|Add0~60                ; out0             ;
+; |RecTest|Code_Lock:codelock|Equal0~0                  ; |RecTest|Code_Lock:codelock|Equal0~0                  ; out0             ;
++-------------------------------------------------------+-------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                       ;
++----------------------------------------------+----------------------------------------------+------------------+
+; Node Name                                    ; Output Port Name                             ; Output Port Type ;
++----------------------------------------------+----------------------------------------------+------------------+
+; |RecTest|KEY[0]                              ; |RecTest|KEY[0]                              ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~4     ; |RecTest|Code_Lock:codelock|next_state~4     ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~6     ; |RecTest|Code_Lock:codelock|next_state~6     ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~7     ; |RecTest|Code_Lock:codelock|next_state~7     ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~8     ; |RecTest|Code_Lock:codelock|next_state~8     ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~9     ; |RecTest|Code_Lock:codelock|next_state~9     ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~10    ; |RecTest|Code_Lock:codelock|next_state~10    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~11    ; |RecTest|Code_Lock:codelock|next_state~11    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~12    ; |RecTest|Code_Lock:codelock|next_state~12    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~13    ; |RecTest|Code_Lock:codelock|next_state~13    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~14    ; |RecTest|Code_Lock:codelock|next_state~14    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~15    ; |RecTest|Code_Lock:codelock|next_state~15    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~16    ; |RecTest|Code_Lock:codelock|next_state~16    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~17    ; |RecTest|Code_Lock:codelock|next_state~17    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~20    ; |RecTest|Code_Lock:codelock|next_state~20    ; out              ;
+; |RecTest|Code_Lock:codelock|next_state~28    ; |RecTest|Code_Lock:codelock|next_state~28    ; out              ;
+; |RecTest|Receiver:rec|rxdata[2]              ; |RecTest|Receiver:rec|rxdata[2]              ; regout           ;
+; |RecTest|Receiver:rec|rxdata[6]              ; |RecTest|Receiver:rec|rxdata[6]              ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[10] ; |RecTest|BaudRateGenerator:gen|clk_count[10] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[9]  ; |RecTest|BaudRateGenerator:gen|clk_count[9]  ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[8]  ; |RecTest|BaudRateGenerator:gen|clk_count[8]  ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[7]  ; |RecTest|BaudRateGenerator:gen|clk_count[7]  ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[6]  ; |RecTest|BaudRateGenerator:gen|clk_count[6]  ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[11] ; |RecTest|BaudRateGenerator:gen|clk_count[11] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[12] ; |RecTest|BaudRateGenerator:gen|clk_count[12] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[13] ; |RecTest|BaudRateGenerator:gen|clk_count[13] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[14] ; |RecTest|BaudRateGenerator:gen|clk_count[14] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[15] ; |RecTest|BaudRateGenerator:gen|clk_count[15] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[16] ; |RecTest|BaudRateGenerator:gen|clk_count[16] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[17] ; |RecTest|BaudRateGenerator:gen|clk_count[17] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[18] ; |RecTest|BaudRateGenerator:gen|clk_count[18] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[19] ; |RecTest|BaudRateGenerator:gen|clk_count[19] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[20] ; |RecTest|BaudRateGenerator:gen|clk_count[20] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[21] ; |RecTest|BaudRateGenerator:gen|clk_count[21] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[22] ; |RecTest|BaudRateGenerator:gen|clk_count[22] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[23] ; |RecTest|BaudRateGenerator:gen|clk_count[23] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[24] ; |RecTest|BaudRateGenerator:gen|clk_count[24] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[25] ; |RecTest|BaudRateGenerator:gen|clk_count[25] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[26] ; |RecTest|BaudRateGenerator:gen|clk_count[26] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[27] ; |RecTest|BaudRateGenerator:gen|clk_count[27] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[28] ; |RecTest|BaudRateGenerator:gen|clk_count[28] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[29] ; |RecTest|BaudRateGenerator:gen|clk_count[29] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[30] ; |RecTest|BaudRateGenerator:gen|clk_count[30] ; regout           ;
+; |RecTest|BaudRateGenerator:gen|clk_count[31] ; |RecTest|BaudRateGenerator:gen|clk_count[31] ; regout           ;
+; |RecTest|Code_Lock:codelock|Selector0~1      ; |RecTest|Code_Lock:codelock|Selector0~1      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector0~3      ; |RecTest|Code_Lock:codelock|Selector0~3      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector0~4      ; |RecTest|Code_Lock:codelock|Selector0~4      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector1~1      ; |RecTest|Code_Lock:codelock|Selector1~1      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector1~2      ; |RecTest|Code_Lock:codelock|Selector1~2      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector1~3      ; |RecTest|Code_Lock:codelock|Selector1~3      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector1~4      ; |RecTest|Code_Lock:codelock|Selector1~4      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector2~2      ; |RecTest|Code_Lock:codelock|Selector2~2      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector2~3      ; |RecTest|Code_Lock:codelock|Selector2~3      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector2~4      ; |RecTest|Code_Lock:codelock|Selector2~4      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector2~5      ; |RecTest|Code_Lock:codelock|Selector2~5      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector3~1      ; |RecTest|Code_Lock:codelock|Selector3~1      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector3~5      ; |RecTest|Code_Lock:codelock|Selector3~5      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector4~1      ; |RecTest|Code_Lock:codelock|Selector4~1      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector4~3      ; |RecTest|Code_Lock:codelock|Selector4~3      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector4~5      ; |RecTest|Code_Lock:codelock|Selector4~5      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector5~3      ; |RecTest|Code_Lock:codelock|Selector5~3      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector5~4      ; |RecTest|Code_Lock:codelock|Selector5~4      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector5~5      ; |RecTest|Code_Lock:codelock|Selector5~5      ; out0             ;
+; |RecTest|Code_Lock:codelock|Selector5~6      ; |RecTest|Code_Lock:codelock|Selector5~6      ; out0             ;
+; |RecTest|Receiver:rec|Selector2~2            ; |RecTest|Receiver:rec|Selector2~2            ; out0             ;
+; |RecTest|Receiver:rec|Selector3~2            ; |RecTest|Receiver:rec|Selector3~2            ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~11       ; |RecTest|BaudRateGenerator:gen|Add0~11       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~12       ; |RecTest|BaudRateGenerator:gen|Add0~12       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~13       ; |RecTest|BaudRateGenerator:gen|Add0~13       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~14       ; |RecTest|BaudRateGenerator:gen|Add0~14       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~15       ; |RecTest|BaudRateGenerator:gen|Add0~15       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~16       ; |RecTest|BaudRateGenerator:gen|Add0~16       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~17       ; |RecTest|BaudRateGenerator:gen|Add0~17       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~18       ; |RecTest|BaudRateGenerator:gen|Add0~18       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~19       ; |RecTest|BaudRateGenerator:gen|Add0~19       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~20       ; |RecTest|BaudRateGenerator:gen|Add0~20       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~21       ; |RecTest|BaudRateGenerator:gen|Add0~21       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~22       ; |RecTest|BaudRateGenerator:gen|Add0~22       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~23       ; |RecTest|BaudRateGenerator:gen|Add0~23       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~24       ; |RecTest|BaudRateGenerator:gen|Add0~24       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~25       ; |RecTest|BaudRateGenerator:gen|Add0~25       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~26       ; |RecTest|BaudRateGenerator:gen|Add0~26       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~27       ; |RecTest|BaudRateGenerator:gen|Add0~27       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~28       ; |RecTest|BaudRateGenerator:gen|Add0~28       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~29       ; |RecTest|BaudRateGenerator:gen|Add0~29       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~30       ; |RecTest|BaudRateGenerator:gen|Add0~30       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~31       ; |RecTest|BaudRateGenerator:gen|Add0~31       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~32       ; |RecTest|BaudRateGenerator:gen|Add0~32       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~33       ; |RecTest|BaudRateGenerator:gen|Add0~33       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~34       ; |RecTest|BaudRateGenerator:gen|Add0~34       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~35       ; |RecTest|BaudRateGenerator:gen|Add0~35       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~36       ; |RecTest|BaudRateGenerator:gen|Add0~36       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~37       ; |RecTest|BaudRateGenerator:gen|Add0~37       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~38       ; |RecTest|BaudRateGenerator:gen|Add0~38       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~39       ; |RecTest|BaudRateGenerator:gen|Add0~39       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~40       ; |RecTest|BaudRateGenerator:gen|Add0~40       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~41       ; |RecTest|BaudRateGenerator:gen|Add0~41       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~42       ; |RecTest|BaudRateGenerator:gen|Add0~42       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~43       ; |RecTest|BaudRateGenerator:gen|Add0~43       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~44       ; |RecTest|BaudRateGenerator:gen|Add0~44       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~45       ; |RecTest|BaudRateGenerator:gen|Add0~45       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~46       ; |RecTest|BaudRateGenerator:gen|Add0~46       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~47       ; |RecTest|BaudRateGenerator:gen|Add0~47       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~48       ; |RecTest|BaudRateGenerator:gen|Add0~48       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~49       ; |RecTest|BaudRateGenerator:gen|Add0~49       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~50       ; |RecTest|BaudRateGenerator:gen|Add0~50       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~51       ; |RecTest|BaudRateGenerator:gen|Add0~51       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~52       ; |RecTest|BaudRateGenerator:gen|Add0~52       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~53       ; |RecTest|BaudRateGenerator:gen|Add0~53       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~54       ; |RecTest|BaudRateGenerator:gen|Add0~54       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~55       ; |RecTest|BaudRateGenerator:gen|Add0~55       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~56       ; |RecTest|BaudRateGenerator:gen|Add0~56       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~57       ; |RecTest|BaudRateGenerator:gen|Add0~57       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~58       ; |RecTest|BaudRateGenerator:gen|Add0~58       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~59       ; |RecTest|BaudRateGenerator:gen|Add0~59       ; out0             ;
+; |RecTest|BaudRateGenerator:gen|Add0~60       ; |RecTest|BaudRateGenerator:gen|Add0~60       ; out0             ;
+; |RecTest|Code_Lock:codelock|Equal0~0         ; |RecTest|Code_Lock:codelock|Equal0~0         ; out0             ;
+; |RecTest|Code_Lock:codelock|Equal1~0         ; |RecTest|Code_Lock:codelock|Equal1~0         ; out0             ;
++----------------------------------------------+----------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri May 27 17:00:42 2016
+Info: Command: quartus_sim --simulation_results_format=VWF UART -c Tester
+Info (324025): Using vector source file "C:/Users/Soren/Documents/GitHub/Semesterprojekt2/DE2/adminValidate.vwf"
+Warning (328014): Can't find node "LEDR[3]" for functional simulation. Ignored vector source file node.
+Warning (328016): Wrong node type and/or width for node "|RecTest|Code_Lock:codelock|present_state" in vector source file. Node in design is of type Enum and of width 1, but node in vector source file is of type 9-Level and of width 1.
+Warning (328018): Signal name "|RecTest|Code_Lock:codelock|present_state" changed to enum type
+Warning (328016): Wrong node type and/or width for node "|RecTest|Receiver:rec|present_state" in vector source file. Node in design is of type Enum and of width 1, but node in vector source file is of type 9-Level and of width 1.
+Warning (328018): Signal name "|RecTest|Receiver:rec|present_state" changed to enum type
+Warning (328012): Can't find signal in vector source file for input pin "|RecTest|KEY[1]"
+Warning (328012): Can't find signal in vector source file for input pin "|RecTest|KEY[2]"
+Warning (328012): Can't find signal in vector source file for input pin "|RecTest|KEY[3]"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      58.69 %
+Info (328052): Number of transitions in simulation is 92172
+Info (324045): Vector file Tester.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 329 megabytes
+    Info: Processing ended: Fri May 27 17:00:43 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

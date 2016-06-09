@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri May 27 17:00:14 2016
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : Tester
+Top-level Entity Name : RecTest
+Family : Cyclone II
+Total logic elements : 92
+    Total combinational functions : 85
+    Dedicated logic registers : 63
+Total registers : 63
+Total pins : 10
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

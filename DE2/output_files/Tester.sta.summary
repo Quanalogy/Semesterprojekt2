@@ -1,0 +1,93 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'BaudRateGenerator:gen|clk_count[0]'
+Slack : -5.182
+TNS   : -5.182
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -2.706
+TNS   : -58.454
+
+Type  : Slow Model Setup 'BaudRateGenerator:gen|clk_baud'
+Slack : -0.593
+TNS   : -6.686
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : -2.540
+TNS   : -17.897
+
+Type  : Slow Model Hold 'BaudRateGenerator:gen|clk_count[0]'
+Slack : -0.273
+TNS   : -0.273
+
+Type  : Slow Model Hold 'BaudRateGenerator:gen|clk_baud'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'CLOCK_50'
+Slack : -3.112
+TNS   : -96.063
+
+Type  : Slow Model Removal 'CLOCK_50'
+Slack : -0.687
+TNS   : -18.849
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -43.380
+
+Type  : Slow Model Minimum Pulse Width 'BaudRateGenerator:gen|clk_baud'
+Slack : -0.500
+TNS   : -21.000
+
+Type  : Slow Model Minimum Pulse Width 'BaudRateGenerator:gen|clk_count[0]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'BaudRateGenerator:gen|clk_count[0]'
+Slack : -2.309
+TNS   : -2.309
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -0.780
+TNS   : -10.081
+
+Type  : Fast Model Setup 'BaudRateGenerator:gen|clk_baud'
+Slack : 0.136
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -1.581
+TNS   : -14.956
+
+Type  : Fast Model Hold 'BaudRateGenerator:gen|clk_count[0]'
+Slack : -0.105
+TNS   : -0.105
+
+Type  : Fast Model Hold 'BaudRateGenerator:gen|clk_baud'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'CLOCK_50'
+Slack : -0.971
+TNS   : -29.223
+
+Type  : Fast Model Removal 'CLOCK_50'
+Slack : -0.698
+TNS   : -15.705
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -43.380
+
+Type  : Fast Model Minimum Pulse Width 'BaudRateGenerator:gen|clk_baud'
+Slack : -0.500
+TNS   : -21.000
+
+Type  : Fast Model Minimum Pulse Width 'BaudRateGenerator:gen|clk_count[0]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------
