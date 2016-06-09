@@ -4,7 +4,7 @@
 
 void zeroCrossInit()
 {
-	dataReceiverInit();				// 
+	dataReceiverInit();				// Initiere datareceiver indgang.
 
 	DDRE = (DDRE & 0b11101111);		// PE4 sættes til indgang.
 	PORTE = (PORTE & 0b11101111);	// Udgangssignalet på PE4 sættes lav, bare for at være sikker.

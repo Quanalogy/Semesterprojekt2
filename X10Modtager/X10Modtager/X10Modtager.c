@@ -14,24 +14,11 @@
 #include "ZeroCrossing.h"
 #include "PirSensor.h"
 
-#include "DataReceiver.h"
-#include "X10Message.h"
-
 int main(void)
 {
-	DDRA = 0b00000001;
-	InitUART(9600, 8, 'N');			// Debug
-
 	zeroCrossInit();				// Initere zero Crossing og alle underliggende systemer.
-	pirInterruptStart();			// Starter i PIR respons stadige
-	activateZeroCrossInterrupt();	// 
-
-	//struct X10Message m;
-	//m.unit_ = 1;
-	//m.mode_ = 1;
-	//m.brightness_ = 80;
-
-	//interpretMessage(m);
+	pirInterruptStart();			// Starter i PIR respons stadige.
+	activateZeroCrossInterrupt();	// Aktivere interuptet fra zero cross detector, kan nu modtage data med X10.
 
 	while(1)
 	{

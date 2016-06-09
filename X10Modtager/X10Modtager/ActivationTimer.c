@@ -4,15 +4,15 @@
 
 void activationTimerInit()
 {
-	lightInit();
+	lightInit();						// Lys tændes.
 
-	TCCR3A = (TCCR3A & 0b11111100);		// Normal mode vælges
+	TCCR3A = (TCCR3A & 0b11111100);		// Normal mode vælges.
 	TCCR3B = (TCCR3B & 0b11100111);		//
 
-	activationTimerStop();
+	activationTimerStop();				// Timer stoppes.
 
-	activationClokcReset();
-
+	activationClokcReset();				// Sekund tæller sættes til 0.
+		
 	TIMSK3 = (TIMSK3 | 0b00000001);		// Interrupt enable
 	sei();								//
 }
@@ -20,10 +20,10 @@ void activationTimerInit()
 
 void activationTimerStart()
 {
-	activationTimerReset();				//
+	activationTimerReset();
 	TCCR3B = (TCCR3B | 0b00000101);		// Preescaler sættes til 1024
 	TCCR3B = (TCCR3B & 0b11111101);		//
-	lightOn();							//
+	lightOn();
 }
 
 
@@ -47,13 +47,27 @@ void activationClokcReset()
 }
 
 
-ISR(TIMER3_OVF_vect)					// Interrupt hvert sekund
+ISR(TIMER3_OVF_vect)					// Interrupt hvert sekund.
 {
 	waitedTime++;						
 
-	if (waitedTime >= PIR_WAIT_TIME)	
+	if (waitedTime >= PIR_WAIT_TIME)	// Checker om tiden er gået.
 	{	
-		activationTimerStop();
+		int newDuty = (((PIR_FADE_TIME + PIR_WAIT_TIME - (float)(waitedTime)) / (PIR_WAIT_TIME + PIR_FADE_TIME))*lightLevel);	// Ny lysstyrke beregnes for at dæmpe lyset.
+
+		if (newDuty <= 0)
+		{
+			lightOff();
+		}
+		else
+		{
+			setPwmTimer(newDuty);
+		}
+
+		if (waitedTime >= PIR_WAIT_TIME + PIR_FADE_TIME)
+		{
+			activationTimerStop();	
+		}
 	}
 
 	activationClokcReset();

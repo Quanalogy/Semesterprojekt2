@@ -6,8 +6,8 @@
 
 void dataReceiverInit()
 {
-	pirInit();
-	activitySimInit();
+	pirInit();						//
+	activitySimInit();				//
 
 	DDRD = (DDRD & 0b11111011);		// Sætter PD2 til indgagn
 }
@@ -15,20 +15,13 @@ void dataReceiverInit()
 
 void newMessage()
 {
-	_delay_us(330);		// Forsinkelse sikre at vi læser bite.  330 virker på fumlebræt
+	_delay_us(330);							// Forsinkelse sikre at vi læser bite.  330 virker på fumlebræt
 	
-	insertNewBit();		// Indsæt nye bit i bitrækken
+	insertNewBit();							// Indsæt nye bit i bitrækken
 
 	if (checkForLegitMessage() == 1)		// Check om der er kommet en ny besked
 	{
-		struct X10Message message = readMessage();		// Læs beekeden
-		
-		SendInteger(message.unit_);			// Debug
-		SendChar(' ');						//
-		SendInteger(message.mode_);			//
-		SendChar(' ');						//
-		SendInteger(message.brightness_);	//
-		SendChar('\n');						//
+		struct X10Message message = readMessage();		// Læs beskeden
 		
 		if (message.unit_ == UNIT_ID || message.unit_ == 0)		// Hvis beskeden er til denne enhed eller alle enheder
 		{
@@ -57,9 +50,9 @@ void interpretMessage(struct X10Message m)
 
 void insertNewBit()		// Shifter alle bits i den indlæste bit én frem og indsætter ny bit
 {
-	char newBit = (PIND & 0b00000100);													// Aflæs databit fra båndpasfilter
+	char newBit = (PIND & 0b00000100);													// Aflæs databit fra databen.
 
-	firstMessagePart = firstMessagePart << 1;											// Shift række 1, én til højre
+	firstMessagePart = firstMessagePart << 1;											// Shift række 1, én til højre.
 	firstMessagePart = (firstMessagePart | ((secondMessagePart & 0b10000000) >> 7));	// og indsæt bit 7 fra 2. række på plads 0 i række 1.
 
 	secondMessagePart = secondMessagePart << 1;											// Shift række 2, én til højre
@@ -69,7 +62,7 @@ void insertNewBit()		// Shifter alle bits i den indlæste bit én frem og indsætte
 	thirdMessagePart = (thirdMessagePart | ((fourthMessagePart & 0b10000000) >> 7));	// og indsæt bit 7 fra 4. række på plads 0 i række 3.
 
 	fourthMessagePart = fourthMessagePart << 1;											// Shift række 4, én til højre
-	fourthMessagePart = (fourthMessagePart | newBit);									// og indsæt ny fra båndpasfilteret på plads 2 i række 4.
+	fourthMessagePart = (fourthMessagePart | newBit);									// og indsæt ny bit fra dateben på plads 2 i række 4.
 }
 
 
@@ -132,12 +125,12 @@ struct X10Message readMessage()	// Læser X.10 besked
 int getUnitID()		// Henter enhedesnummer
 {
 	char unitID = 0b00000000;
-
-	unitID = (unitID | (getBitValue(firstMessagePart, 1) << 4));
-	unitID = (unitID | (getBitValue(firstMessagePart, 0) << 3));
-	unitID = (unitID | (getBitValue(secondMessagePart, 3) << 2));
-	unitID = (unitID | (getBitValue(secondMessagePart, 2) << 1));
-	unitID = (unitID | (getBitValue(secondMessagePart, 1) << 0));
+	
+	unitID = (unitID | (getBitValue(firstMessagePart, 1) << 4));	// Indsætter bit fra in-register i unitID
+	unitID = (unitID | (getBitValue(firstMessagePart, 0) << 3));	// 
+	unitID = (unitID | (getBitValue(secondMessagePart, 3) << 2));	// 
+	unitID = (unitID | (getBitValue(secondMessagePart, 2) << 1));	// 
+	unitID = (unitID | (getBitValue(secondMessagePart, 1) << 0));	// 
 
 	return unitID;
 }
@@ -153,16 +146,16 @@ int getBrightness()		// Henter lysviveau
 {
 	char brightness = 0b00000000;
 
-	brightness = (brightness | (getBitValue(thirdMessagePart, 3) << 6));
-	brightness = (brightness | (getBitValue(thirdMessagePart, 2) << 5));
-	brightness = (brightness | (getBitValue(thirdMessagePart, 1) << 4));
-	brightness = (brightness | (getBitValue(thirdMessagePart, 0) << 3));
+	brightness = (brightness | (getBitValue(thirdMessagePart, 3) << 6));	//	Indsætter bit fra in-registre i brightness
+	brightness = (brightness | (getBitValue(thirdMessagePart, 2) << 5));	//	
+	brightness = (brightness | (getBitValue(thirdMessagePart, 1) << 4));	//	
+	brightness = (brightness | (getBitValue(thirdMessagePart, 0) << 3));	//	
+																			// 
+	brightness = (brightness | (getBitValue(fourthMessagePart, 3) << 2));	//	
+	brightness = (brightness | (getBitValue(fourthMessagePart, 2) << 1));	//	
+	brightness = (brightness | (getBitValue(fourthMessagePart, 1) << 0));	//	
 
-	brightness = (brightness | (getBitValue(fourthMessagePart, 3) << 2));
-	brightness = (brightness | (getBitValue(fourthMessagePart, 2) << 1));
-	brightness = (brightness | (getBitValue(fourthMessagePart, 1) << 0));
-
-	if (brightness > 100)
+	if (brightness > 100)	// Hvis lystyrken er støre end 100 % sættes den til 100.
 	{
 		brightness = 100;
 	}
@@ -171,45 +164,25 @@ int getBrightness()		// Henter lysviveau
 }
 
 
-char getBitValue(char byte, int bitNum)		// Henter bit nr. bitNum ud af X10 Besked
+char getBitValue(char byte, int bitNum)		// Henter bit nr. bitNum ud af X10 Besked.
 {
-	if (bitNum < 0 && 3 < bitNum)		// Checker først om der bedes om legalt bit
-	{
-		return 0b11111111;
+	if (bitNum < 0 && 3 < bitNum)		// Checker først om der bedes om legalt bit.
+	{									// Da der i en X.10 bitstreng på 8 bit kun er 4 reele bit
+		return 0b11111111;				// Kan kun 4 (0-3) bit hents.
 	}
 	
-	int bitShift = bitNum * 2;			
+	int bitShift = bitNum * 2;			// 	
 
 	if ((byte & (0b00000011 << bitShift)) == (0b00000001 << bitShift))
 	{
-		return 0b00000000;		// Det er et '0'
+		return 0b00000000;				// Det er et '0'.
 	}
 	else if ((byte & (0b00000011 << bitShift)) == (0b00000010 << bitShift))
 	{
-		return 0b00000001;		// Det er et '1'
+		return 0b00000001;				// Det er et '1'.
 	}
 	else
 	{
-		return 0b11111111;
+		return 0b11111111;				// Fejlkode.
 	}
 }
-
-
-
-/*
-Kode til at få skrevet hele arrayet ud:
------------------------------------------
-SendChar(0b00000000);
-SendChar(firstMessagePart);
-SendChar(secondMessagePart);
-SendChar(thirdMessagePart);
-SendChar(fourthMessagePart);
-SendChar(0b00000000);
-SendChar(0b00000000);
-SendChar(0b00000000);
-
-
-
-
-
-*/

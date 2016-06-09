@@ -5,10 +5,10 @@
 #include <util/delay.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include "uart.h"		//Debug
+
 
 // Enhedes ID nr.
-#define UNIT_ID 3
+#define UNIT_ID 1
 
 
 // Konstant til 1-sekunds timere
@@ -16,14 +16,15 @@
 
 
 // Konstant til hvor længe lyset skal være tændt ved PIR-respons
-#define PIR_WAIT_TIME 3		// Tid lyset skal være tændt når PIR sensoren opfanger bevægelse i sekunder. (900 sek = 15 min)
+#define PIR_WAIT_TIME 10	// Tid lyset skal være tændt når PIR sensoren opfanger bevægelse i sekunder. (900 sek = 15 min)
+#define PIR_FADE_TIME 5		// Tid lyset skal fade ned til 0 % før lyset slukkes helt.
 
 
 // Konstanter til Aktivitetssimulering
-#define MIN_SIM_TIME 2		// Minimum tid simuleringen skal køre i sekunder
-#define MAX_SIM_TIME 5		// Maximum tid simuleringen kan have tændt / slukket lys
+#define MIN_SIM_TIME 3		// Minimum tid simuleringen skal køre i sekunder
+#define MAX_SIM_TIME 10		// Maximum tid simuleringen kan have tændt / slukket lys
 
 
-extern int lightLevel;
+extern int lightLevel;		// 
 
 #endif /* GLOBALINCLUDE_H_ */
