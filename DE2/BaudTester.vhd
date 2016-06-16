@@ -10,7 +10,7 @@ entity BaudTester is
 end BaudTester;
 
 architecture test of BaudTester is
-signal clk_115200 : std_logic;
+signal clk_115200	: std_logic;
 begin
 gen	: entity work.BaudRateGenerator		port map (clk => CLOCK_50, reset => KEY(0), clk_baud => clk_115200);
 LEDR(0) <= clk_115200;
