@@ -4,6 +4,7 @@ use ieee.std_logic_1164.all;
 
 entity Receiver is
 	port (	rxd, reset, clk_baud	: in std_logic;
+				bitsPerCode				: in natural;
 				rxdata					: out std_logic_vector(16 downto 1); --Skal også ændres i FullTester (linje 15), Code_Lock (linje 8) og her (linje 7 og 16)
 				rxvalid					: out std_logic
 			);
@@ -13,7 +14,6 @@ architecture Rec of Receiver is
 type state is (idle, reading, stopping, latchData);
 signal present_state, next_state : state;
 signal counter : natural := 0;
-constant end_length : natural := 16;	--Skal også ændres i FullTester (linje 15), Code_Lock (linje 8) og her (linje 7 og 16)
 
 begin
 
@@ -36,7 +36,7 @@ begin
 				next_state <= reading;
 			end if;
 		when reading =>
-			if counter > end_length then
+			if counter > (2 * 16 * bitsPerCode) then	-- 2 fordi der er 2 koder, 16 fordi der skal klokkes på d. 8. af de 16
 				next_state <= stopping;
 			else
 				null;
@@ -59,7 +59,9 @@ begin
 if falling_edge(clk_baud) then
 	case present_state is
 		when reading =>
-			rxdata(counter) <= rxd;
+			if (counter / 8 = 1) then
+					rxdata((counter - 8 ) / 16) <= rxd; -- Indsætter målingen på den rigtige plads i arrayet
+			end if;
 			counter <= counter + 1;
 		when latchData =>
 			rxvalid <= '1';
