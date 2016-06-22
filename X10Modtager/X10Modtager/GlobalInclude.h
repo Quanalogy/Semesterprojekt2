@@ -26,6 +26,7 @@
 #define MIN_SIM_LIGHT 25	// Minimum lysstyrke ved aktivitetssmulering.
 #define MAX_SIM_LIGHT 100	// Maximum lysstyrke ved aktivitetssimulering.
 
+
 // 
 extern int lightLevel;			// 
 extern int lastPirLightLevel;	//
