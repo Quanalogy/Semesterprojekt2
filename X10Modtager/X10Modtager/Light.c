@@ -16,7 +16,19 @@ void lightInit()
 
 void setLightLevel(int duty)
 {
+	if (duty > 100)
+		duty = 100;
+
 	lightLevel = duty;
+}
+
+
+void setLastPirLightLevel(int duty)
+{
+	if (duty > 100)
+		duty = 100;
+
+	lastPirLightLevel = duty;
 }
 
 

@@ -1,6 +1,6 @@
 // Koder til styring af X.10 Modtager til Semester Projekt 2.
-// Ver. 1.0
-// xx/xx - 2016
+// Ver. 1.1
+// 22/6 - 2016
 //
 // Zero Cross Detector	PE4	Arduino ben 2	Ext Int 4
 // Data					PD2	Arduino ben 19	

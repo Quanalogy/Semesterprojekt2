@@ -33,17 +33,32 @@ void newMessage()
 
 void interpretMessage(struct X10Message m)
 {
-	setLightLevel(m.brightness_);	// Sæt den nye lysstyrke
+	if (pirInterruptCheckRunnig() == 1)			// PIR-respons er aktiv.
+	{
+		if (m.mode_ == 1)					// Aktivitetssimulering skal starte
+		{
+			setLastPirLightLevel(lightLevel);
 
-	if (m.mode_ == 0 && pirInterruptCheckRunnig() != 1)			// Hvis PIR respons skal starte, og ikke alderede er aktiv
-	{
-		activitySimStop();			// Stop Aktivitetssimuleringen
-		pirInterruptStart();		// Start PIR-interruptet
+			pirInterruptStop();				// Stop PIR-interruptet
+			activitySimStart();				// Start Aktivitetssimuleringen
+		}
 	}
-	else if (m.mode_ == 1 && activitySimCheckRunning() != 1)	// Hvis Aktivitessimulering skal starte, og ikke aldere er aktiv
+	else if (activitySimCheckRunning() == 1)	// Aktivitetssimmulering er aktiv.
 	{
-		pirInterruptStop();			// Stop PIR-interruptet
-		activitySimStart();			// Start Aktivitetssimuleringen
+		if (m.mode_ == 0)					// PIR-respons skal starte.
+		{
+			if (m.brightness_ == 101)
+			{
+				setLightLevel(lastPirLightLevel);
+			}
+			else
+			{
+				setLightLevel(m.brightness_);// Sæt den nye lysstyrke
+			}
+
+			activitySimStop();				// Stop Aktivitetssimuleringen
+			pirInterruptStart();			// Start PIR-interruptet
+		}
 	}
 }
 
@@ -154,11 +169,6 @@ int getBrightness()		// Henter lysviveau
 	brightness = (brightness | (getBitValue(fourthMessagePart, 3) << 2));	//	
 	brightness = (brightness | (getBitValue(fourthMessagePart, 2) << 1));	//	
 	brightness = (brightness | (getBitValue(fourthMessagePart, 1) << 0));	//	
-
-	if (brightness > 100)	// Hvis lystyrken er støre end 100 % sættes den til 100.
-	{
-		brightness = 100;
-	}
 
 	return brightness;
 }

@@ -12,6 +12,7 @@ void activitySimStop();
 int activitySimCheckRunning();		// 0 = not running, 1 = running
 
 int generateNewSimTime();
+int generateNewLightLevel();
 
 void activityClockReset();
 

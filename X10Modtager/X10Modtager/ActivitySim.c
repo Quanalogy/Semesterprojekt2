@@ -54,6 +54,12 @@ int generateNewSimTime()
 }
 
 
+int generateNewLightLevel()
+{
+	return ((rand() % MAX_SIM_LIGHT + 1) + MIN_SIM_LIGHT);
+}
+
+
 void activityClockReset()
 {
 	TCNT4 = SEC_TIME;										// Tælle register sættes til 49911 = 1 sek.
@@ -66,6 +72,7 @@ ISR(TIMER4_OVF_vect)
 
 	if (simulatedTime >= simTime)
 	{
+		setLightLevel(generateNewLightLevel());
 		lightInvert();
 		simulatedTime = 0;
 		simTime = generateNewSimTime();
