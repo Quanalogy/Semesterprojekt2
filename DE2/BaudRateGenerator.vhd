@@ -23,14 +23,15 @@ begin
 		null;
 	end if;
 	case clk_count is
-		when 20832 => --For real test
+		when 1302 => --For real test	//20832/16=1302
 		--when 19 =>	-- For simulation
 			clk_baud <= '1';
-		when 20833 =>	--For real test
+		when 1303 =>	--For real test	//1302+1
 		--when 20 =>	-- For simulation
 			clk_count := 0;
 		when others =>
-		clk_baud <= '0';
+			clk_baud <= '0';
+			--null;
 	end case;
 end process;
 
