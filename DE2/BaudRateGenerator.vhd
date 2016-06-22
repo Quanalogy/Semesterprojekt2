@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 
 entity BaudRateGenerator is
 	port (	clk, reset	: in std_logic;
-				clk_baud		: out std_logic
+			clk_baud	: out std_logic
 				);
 end BaudRateGenerator;
 
