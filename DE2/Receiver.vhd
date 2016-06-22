@@ -1,6 +1,7 @@
 ----- Libraries -----
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity Receiver is
 	port (	rxd, reset, clk_baud	: in std_logic;
@@ -59,7 +60,7 @@ begin
 if falling_edge(clk_baud) then
 	case present_state is
 		when reading =>
-			if (counter / 8 = 1) then
+			if ((counter /= 8) AND (((counter - 8) mod 16) = 0)) then
 					rxdata((counter - 8 ) / 16) <= rxd; -- Indsætter målingen på den rigtige plads i arrayet
 			end if;
 			counter <= counter + 1;

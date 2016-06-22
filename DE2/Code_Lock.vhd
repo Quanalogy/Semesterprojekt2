@@ -16,7 +16,6 @@ type state is (idle, eval, going_idle);
 constant end_length : natural := bitsPerCode;	--Skal også ændres i FullTester (linje 15), Code_Lock (linje 8) og her (linje 7 og 16)
 
 signal present_state, next_state : state;
-signal clk_cnt	: integer := 8; 
 
 begin
 state_reg: process(clk, reset)	-- reset and clocking to next state
@@ -34,19 +33,13 @@ begin
 	case present_state is
 		when idle =>
 			if codeEntry = '1' then				-- her vi læser normalt
-				if clk_cnt = end_length then
 					next_state <= eval;
-					clk_cnt <= 0;
-				else
-					clk_cnt <= clk_cnt + 1;
-				end if;
 			end if;
 		when eval =>
 			if codeEntry = '0' then
 				next_state <= going_idle;
 			end if;
 		when going_idle =>
-			-- clk_cnt <= 8; 	-- Hvad gør den her?
 			next_state <= idle;
 		when others =>
 			next_state <= idle;

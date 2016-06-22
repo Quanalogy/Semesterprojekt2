@@ -17,7 +17,7 @@ signal clk_57600, recvalid 	: std_logic := '0';	-- recvalid er det 1 eller 0 fra
 constant bitsPerCode				: natural := 8;
 --signal reset_baud_out		: std_logic := '1';
 --signal indata				: std_logic_vector(128 downto 1) := (others => '0'); --Skal også ændres i Code_Lock (linje 8) og Receiver (linje 7 og 16)
-signal indata								: std_logic_vector(16 downto 1) := (others => '0');
+signal indata						: std_logic_vector((2 * bitsPerCode) downto 1) := (others => '0');
 begin
 gen			: entity work.BaudRateGenerator	port map (	clk => CLOCK_50, reset => KEY(0), clk_baud => clk_57600);
 rec			: entity work.Receiver				port map (	rxd => GPIO_0(0), reset => KEY(0), clk_baud => clk_57600, rxdata => indata, rxvalid => recvalid,
