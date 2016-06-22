@@ -3,6 +3,7 @@
 #include "ActivitySim.h"
 #include "Light.h"
 
+#include "uart.h"
 
 void dataReceiverInit()
 {
@@ -23,6 +24,15 @@ void newMessage()
 	{
 		struct X10Message message = readMessage();		// Læs beskeden
 		
+		SendInteger(message.unit_);
+		SendChar(' ');
+		SendInteger(message.mode_);
+		SendChar(' ');
+		SendInteger(message.brightness_);
+		SendChar('\n');
+
+
+
 		if (message.unit_ == UNIT_ID || message.unit_ == 0)		// Hvis beskeden er til denne enhed eller alle enheder
 		{
 			interpretMessage(message);		// Forstå besked og udfør kommandoer

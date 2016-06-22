@@ -14,8 +14,12 @@
 #include "ZeroCrossing.h"
 #include "PirSensor.h"
 
+#include "uart.h"
+
 int main(void)
 {
+	InitUART(9600, 8, 'N');
+
 	zeroCrossInit();				// Initere zero Crossing og alle underliggende systemer.
 	pirInterruptStart();			// Starter i PIR respons stadige.
 	activateZeroCrossInterrupt();	// Aktivere interuptet fra zero cross detector, kan nu modtage data med X10.
