@@ -19,8 +19,8 @@ signal clk_57600, recvalid 	: std_logic := '0';	-- recvalid er det 1 eller 0 fra
 signal indata								: std_logic_vector(16 downto 1) := (others => '0');
 begin
 gen			: entity work.BaudRateGenerator		port map (	clk => CLOCK_50, reset => KEY(0), clk_baud => clk_57600);
-rec			: entity work.Receiver				port map (	rxd => GPIO_0(0), reset => KEY(0), clk_baud => clk_57600, rxdata => indata, rxvalid => recvalid);
-codelock	: entity work.Code_Lock				port map (	clk => clk_57600, reset => KEY(0), codeEntry => recvalid, code => indata, lock => GPIO_1(0), clk_out=>GPIO_1(35));
+rec			: entity work.Receiver				port map (	rxd => GPIO_0(0), reset => KEY(0), clk_baud => clk_57600, rxdata => indata, rxvalid => recvalid, clk_out=>GPIO_1(35));
+codelock	: entity work.Code_Lock				port map (	clk => clk_57600, reset => KEY(0), codeEntry => recvalid, code => indata, lock => GPIO_1(0));
 GPIO_1(1) <= clk_57600;
 --LEDG <= indata(8 downto 1);
 LEDR(15 downto 0) <= indata(16 downto 1);
