@@ -15,8 +15,8 @@ type state is (idle, eval, going_idle);
 constant end_length : natural := 16;	--Skal også ændres i FullTester (linje 15), Code_Lock (linje 8) og her (linje 7 og 16)
 
 signal present_state, next_state : state;
-signal clk_cnt	: integer := 8; 
-
+--variable clk_cnt	: integer range 0 to 15;
+--variable clk_out_var : std_logic := '0';
 begin
 state_reg: process(clk, reset)	-- reset and clocking to next state
 begin
@@ -28,17 +28,20 @@ begin
 end process;
 
 nxt_state: process(present_state, codeEntry)	-- State Machine transitions
+variable cnt : integer range 0 to 15 := 7;
+variable clk_out_var : std_logic := '0';
 begin
+clk_out_var := '0';
 	next_state <= present_state;
 	case present_state is
 		when idle =>
 			if codeEntry = '1' then				-- her vi læser normalt
-				if clk_cnt = 16 then
+				if cnt = 15 then
 					next_state <= eval;
-					clk_cnt <= 0;
-					clk_out <= '1';
+					cnt := 0;
+					clk_out_var := '1';
 				else
-					clk_cnt <= clk_cnt + 1;
+					cnt := cnt + 1;
 				end if;				
 			end if;
 		when eval =>
@@ -46,11 +49,12 @@ begin
 				next_state <= going_idle;
 			end if;
 		when going_idle =>
-			clk_cnt <= 8;
+			cnt := 7;
 			next_state <= idle;			
 		when others =>
 			next_state <= idle;
-	end case;	
+	end case;
+	clk_out <= clk_out_var;
 end process;
 
 outputs: process(present_state)	-- State machine output
