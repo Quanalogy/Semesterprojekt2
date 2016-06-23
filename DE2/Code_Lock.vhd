@@ -4,9 +4,9 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity Code_Lock is
-	port(	clk, reset, codeEntry			: in std_logic;
+	port(	clk, reset, codeEntry	: in std_logic;
 			code							: in std_logic_vector(16 downto 1); --Skal også ændres i FullTester (linje 15) og Receiver (linje 7 og 16)
-			lock							: out std_logic
+			lock,clk_out				: out std_logic
 			);
 end Code_Lock;
 
@@ -36,6 +36,7 @@ begin
 				if clk_cnt = 16 then
 					next_state <= eval;
 					clk_cnt <= 0;
+					clk_out <= '1';
 				else
 					clk_cnt <= clk_cnt + 1;
 				end if;				
