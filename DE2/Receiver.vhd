@@ -70,10 +70,10 @@ begin
 				end if;
 				counter <= counter + 1;
 			when latchData =>
-				rxvalid <= '1';
 				if codeNumber = 1 then
 					codeNumber <= 2;
 				elsif codeNumber = 2 then
+					rxvalid <= '1';
 					codeNumber <= 1;
 				end if;
 			when others	=>
