@@ -13,8 +13,7 @@ end Code_Lock;
 
 architecture simple of Code_Lock is
 type state is (idle, eval, going_idle);
-constant end_length : natural := bitsPerCode;	--Skal også ændres i FullTester (linje 15), Code_Lock (linje 8) og her (linje 7 og 16)
-
+constant end_length : natural := 2 * bitsPerCode;	--Skal også ændres i FullTester (linje 15), Code_Lock (linje 8) og her (linje 7 og 16)
 signal present_state, next_state : state;
 
 begin
@@ -33,7 +32,7 @@ begin
 	case present_state is
 		when idle =>
 			if codeEntry = '1' then				-- her vi læser normalt
-					next_state <= eval;
+				next_state <= eval;
 			end if;
 		when eval =>
 			if codeEntry = '0' then
@@ -43,15 +42,14 @@ begin
 			next_state <= idle;
 		when others =>
 			next_state <= idle;
-	end case;	
+	end case;
 end process;
 
 outputs: process(present_state)	-- State machine output
 begin
 	case present_state is
 		when eval =>
-			--if code(end_length downto (end_length/2 + 1)) = code(end_length/2 downto 1) then
-			if (code((2 * end_length) downto (end_length + 1)) = code(end_length downto 1)) then
+			if (code(end_length downto ((end_length/2) + 1)) = code((end_length/2) downto 1)) then
 				lock <= '1';
 			else
 				lock <= '0';

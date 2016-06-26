@@ -26,9 +26,10 @@ begin
 		when 1302 => --For real test	//20832/16=1302
 		--when 19 =>	-- For simulation
 			clk_baud <= '1';
-		when 1303 =>	--For real test	//1302+1
-		--when 20 =>	-- For simulation
 			clk_count := 0;
+		--when 1303 =>	--For real test	//1302+1
+		--when 20 =>	-- For simulation
+			--clk_count := 0;
 		when others =>
 			clk_baud <= '0';
 			--null;

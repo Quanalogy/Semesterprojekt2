@@ -216,6 +216,10 @@ TSWLatexianTemp*
 *.tdb
 *.flock
 
+output_files/Tester.pof
+output_files/Tester.sof
+db/Tester.db_info
+
 # Allow
 !Tools/de2_assignments.qsf
 !output_files/ASP.cdf
