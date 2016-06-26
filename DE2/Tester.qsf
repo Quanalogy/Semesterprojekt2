@@ -498,6 +498,6 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform1.vwf
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/Munke/Documents/IHA/PRJ2/Semesterprojekt2/DE2/output_files/Waveform1.vwf"
 set_global_assignment -name CDF_FILE output_files/Chain2.cdf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "F:/Dropbox/Universitet/Elektronik/2. semester/PRJ/Gitmappen/Semesterprojekt2/DE2/output_files/Waveform1.vwf"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

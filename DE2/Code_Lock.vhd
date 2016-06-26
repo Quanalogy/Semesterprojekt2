@@ -6,14 +6,13 @@ use ieee.numeric_std.all;
 entity Code_Lock is
 	port(	clk, reset, codeEntry	: in std_logic;
 			code							: in std_logic_vector(16 downto 1); --Skal også ændres i FullTester (linje 15) og Receiver (linje 7 og 16)
-			lock							: out std_logic;
-			bitsPerCode					: in natural
+			lock							: out std_logic
+			--bitsPerCode					: in natural
 			);
 end Code_Lock;
 
 architecture simple of Code_Lock is
 type state is (idle, eval, going_idle);
-constant end_length : natural := 2 * bitsPerCode;	--Skal også ændres i FullTester (linje 15), Code_Lock (linje 8) og her (linje 7 og 16)
 signal present_state, next_state : state;
 
 begin
@@ -49,7 +48,7 @@ outputs: process(present_state)	-- State machine output
 begin
 	case present_state is
 		when eval =>
-			if (code(end_length downto ((end_length/2) + 1)) = code((end_length/2) downto 1)) then
+			if (code(16 downto 9) = code(8 downto 1)) then
 				lock <= '1';
 			else
 				lock <= '0';

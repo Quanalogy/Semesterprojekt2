@@ -18,6 +18,5 @@ begin
 gen		: entity work.BaudRateGenerator	port map (	clk => CLOCK_50, reset => KEY(0), clk_baud => clk_57600);
 rec		: entity work.Receiver				port map (	rxd => GPIO_0(0), reset => KEY(0), clk_baud => clk_57600, rxdata => indata, rxvalid => recvalid,
 																		bitsPerCode => null);
-codelock	: entity work.Code_Lock				port map (	clk => CLOCK_50, reset => KEY(0), codeEntry => recvalid, code => indata, lock => GPIO_1(0),
-																		bitsPerCode => null);
+codelock	: entity work.Code_Lock				port map (	clk => CLOCK_50, reset => KEY(0), codeEntry => recvalid, code => indata, lock => GPIO_1(0));
 end test;

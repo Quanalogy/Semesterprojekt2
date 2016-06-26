@@ -15,7 +15,7 @@ architecture Rec of Receiver is
 type state is (idle, reading, stopping, latchData);
 signal present_state, next_state : state;
 signal counter : natural := 0;
-constant end_length : natural := 2 * bitsPerCode;	--Skal også ændres i FullTester (linje 15), Code_Lock (linje 8) og her (linje 7 og 16)
+signal codeNumber : natural := 1;
 
 begin
 state_reg : process(clk_baud, reset)
@@ -36,7 +36,7 @@ begin
 				next_state <= reading;
 			end if;
 		when reading =>
-			if counter > (16 * end_length) then	-- 16 fordi der skal klokkes på d. 8. af de 16
+			if counter > ((16 * bitsPerCode)+ 8 + 15) then	-- 16 fordi der skal klokkes på d. 8. af de 16
 				next_state <= stopping;
 			else
 				null;
@@ -57,23 +57,31 @@ end process;
 output : process(present_state)
 variable clk_out_var : std_logic := '0';
 begin
-if falling_edge(clk_baud) then
-clk_out_var := '0';
-	case present_state is
-		when reading =>
-			if ((counter /= 8) AND (((counter - 8) mod 16) = 0)) then
+	if falling_edge(clk_baud) then
+	clk_out_var := '0';
+		case present_state is
+			when reading =>
+				if ((counter /= 8) AND (((counter - 8) mod 16) = 0) AND (codeNumber = 1)) then
 					rxdata((counter - 8 ) / 16) <= rxd; -- Indsætter målingen på den rigtige plads i arrayet
 					clk_out_var := '1';
-			end if;
-			counter <= counter + 1;
-		when latchData =>
-			rxvalid <= '1';
-		when others	=>
-			rxvalid <= '0';
-			counter <= 0;
-	end case;
-else
-	null;
+				elsif ((counter /= 8) AND (((counter - 8) mod 16) = 0) AND (codeNumber = 2)) then
+					rxdata(8 + (counter - 8 ) / 16) <= rxd; -- Indsætter målingen på den rigtige plads i arrayet
+					clk_out_var := '1';
+				end if;
+				counter <= counter + 1;
+			when latchData =>
+				rxvalid <= '1';
+				if codeNumber = 1 then
+					codeNumber <= 2;
+				elsif codeNumber = 2 then
+					codeNumber <= 1;
+				end if;
+			when others	=>
+				rxvalid <= '0';
+				counter <= 0;
+		end case;
+	else
+		null;
 end if;
 clk_out <= clk_out_var;
 end process;
