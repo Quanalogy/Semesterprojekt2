@@ -14,11 +14,11 @@
 #include "ZeroCrossing.h"
 #include "PirSensor.h"
 
-#include "uart.h"
+#include "uart.h"					// Debug
 
 int main(void)
 {
-	InitUART(9600, 8, 'N');
+	InitUART(9600, 8, 'N');			// Debug
 
 	zeroCrossInit();				// Initere zero Crossing og alle underliggende systemer.
 	pirInterruptStart();			// Starter i PIR respons stadige.

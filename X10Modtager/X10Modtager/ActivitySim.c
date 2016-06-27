@@ -49,14 +49,14 @@ int activitySimCheckRunning()
 
 int generateNewSimTime()
 {
-	return ((rand() % MAX_SIM_TIME + 1) + MIN_SIM_TIME);	// Tilfældig tid beregnes.
+	return (((rand() + UNIT_ID) % MAX_SIM_TIME + 1) + MIN_SIM_TIME);	// Tilfældig tid beregnes.
 															// Husk at gang med 60 for at få minuter!
 }
 
 
 int generateNewLightLevel()
 {
-	return ((rand() % MAX_SIM_LIGHT + 1) + MIN_SIM_LIGHT);
+	return (((rand() + UNIT_ID) % MAX_SIM_LIGHT + 1) + MIN_SIM_LIGHT);
 }
 
 

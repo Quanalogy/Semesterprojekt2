@@ -16,7 +16,7 @@ void dataReceiverInit()
 
 void newMessage()
 {
-	_delay_us(330);							// Forsinkelse sikre at vi læser bite.  330 virker på fumlebræt
+	_delay_us(330);							// Forsinkelse sikre at vi læser bit.  330 virker på fumlebræt
 	
 	insertNewBit();							// Indsæt nye bit i bitrækken
 
@@ -24,14 +24,12 @@ void newMessage()
 	{
 		struct X10Message message = readMessage();		// Læs beskeden
 		
-		SendInteger(message.unit_);
-		SendChar(' ');
-		SendInteger(message.mode_);
-		SendChar(' ');
-		SendInteger(message.brightness_);
-		SendChar('\n');
-
-
+		SendInteger(message.unit_);						// Debug
+		SendChar(' ');									//
+		SendInteger(message.mode_);						//
+		SendChar(' ');									//
+		SendInteger(message.brightness_);				//
+		SendChar('\n');									//
 
 		if (message.unit_ == UNIT_ID || message.unit_ == 0)		// Hvis beskeden er til denne enhed eller alle enheder
 		{
@@ -51,6 +49,10 @@ void interpretMessage(struct X10Message m)
 
 			pirInterruptStop();				// Stop PIR-interruptet
 			activitySimStart();				// Start Aktivitetssimuleringen
+		}
+		else
+		{
+			setLightLevel(m.brightness_);
 		}
 	}
 	else if (activitySimCheckRunning() == 1)	// Aktivitetssimmulering er aktiv.

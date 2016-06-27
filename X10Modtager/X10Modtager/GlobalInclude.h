@@ -8,7 +8,7 @@
 
 
 // Enhedes ID nr.
-#define UNIT_ID 1
+#define UNIT_ID 2
 
 
 // Konstant til 1-sekunds timere
