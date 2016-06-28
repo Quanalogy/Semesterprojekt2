@@ -20,6 +20,7 @@ void setLightLevel(int duty)
 		duty = 100;
 
 	lightLevel = duty;
+	setPwmTimer(lightLevel);
 }
 
 
