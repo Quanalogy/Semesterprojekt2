@@ -34,7 +34,7 @@ begin
 				next_state <= eval;
 			end if;
 		when eval =>
-			if codeEntry = '0' then
+			if (codeEntry = '0') then
 				next_state <= going_idle;
 			end if;
 		when going_idle =>
@@ -54,7 +54,7 @@ begin
 				lock <= '0';
 			end if;
 		when others =>
-			lock <= '0';
+			null;
 		end case;
 end process;
 
